@@ -1,0 +1,63 @@
+{
+	"name": "SQLProductsDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sink_Data_(SQL DB)"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "product_id",
+				"type": "varchar"
+			},
+			{
+				"name": "product_category_name",
+				"type": "varchar"
+			},
+			{
+				"name": "product_name_length",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_description_length",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_photos_qty",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_weight_g",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_length_cm",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_height_cm",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_width_cm",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Products"
+		}
+	}
+}

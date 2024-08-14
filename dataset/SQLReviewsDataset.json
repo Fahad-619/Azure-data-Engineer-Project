@@ -1,0 +1,53 @@
+{
+	"name": "SQLReviewsDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sink_Data_(SQL DB)"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "review_id",
+				"type": "varchar"
+			},
+			{
+				"name": "order_id",
+				"type": "varchar"
+			},
+			{
+				"name": "review_score",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "review_comment_title",
+				"type": "text"
+			},
+			{
+				"name": "review_comment_message",
+				"type": "text"
+			},
+			{
+				"name": "review_creation_date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "review_answer_timestamp",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Reviews"
+		}
+	}
+}

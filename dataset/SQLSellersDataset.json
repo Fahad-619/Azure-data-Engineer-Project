@@ -1,0 +1,37 @@
+{
+	"name": "SQLSellersDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sink_Data_(SQL DB)"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "seller_id",
+				"type": "varchar"
+			},
+			{
+				"name": "seller_zip_code_prefix",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "seller_city",
+				"type": "varchar"
+			},
+			{
+				"name": "seller_state",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Sellers"
+		}
+	}
+}

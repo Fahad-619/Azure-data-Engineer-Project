@@ -1,0 +1,28 @@
+{
+	"name": "SQLCategoriesDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sink_Data_(SQL DB)"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "product_category_name",
+				"type": "varchar"
+			},
+			{
+				"name": "product_category_name_english",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Categories"
+		}
+	}
+}

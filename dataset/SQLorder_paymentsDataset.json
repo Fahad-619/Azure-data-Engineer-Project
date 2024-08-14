@@ -1,0 +1,44 @@
+{
+	"name": "SQLorder_paymentsDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sink_Data_(SQL DB)"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "varchar"
+			},
+			{
+				"name": "payment_sequential",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "payment_type",
+				"type": "varchar"
+			},
+			{
+				"name": "payment_installments",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "payment_value",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OrderPayments"
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"name": "SQLCustomersDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sink_Data_(SQL DB)"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "customer_id",
+				"type": "varchar"
+			},
+			{
+				"name": "customer_unique_id",
+				"type": "varchar"
+			},
+			{
+				"name": "customer_zip_code_prefix",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "customer_city",
+				"type": "varchar"
+			},
+			{
+				"name": "customer_state",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Customers"
+		}
+	}
+}
