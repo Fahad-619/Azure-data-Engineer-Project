@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ADLSOrdersDataset",
+						"referenceName": "metaorder",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -100,11 +100,157 @@
 									"type": "DatasetReference"
 								}
 							]
+						},
+						{
+							"name": "On Success",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Copy data1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "On Success",
+								"value": "Success"
+							}
+						},
+						{
+							"name": "On Failure",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Copy data1",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "On Failure",
+								"value": "Failed"
+							}
+						},
+						{
+							"name": "On Completion",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Copy data1",
+									"dependencyConditions": [
+										"Completed"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "On Completion",
+								"value": "Completed"
+							}
 						}
 					]
 				}
+			},
+			{
+				"name": "For each On Success",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "For each On Success",
+					"value": "For Each Activity Success"
+				}
+			},
+			{
+				"name": "For Each On Failure",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "For Each On Failure",
+					"value": "For Each Activity Failed"
+				}
+			},
+			{
+				"name": "For Each On Completion",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "For Each On Completion",
+					"value": "For Each Activity Completed"
+				}
 			}
 		],
+		"variables": {
+			"On Success": {
+				"type": "String"
+			},
+			"On Failure": {
+				"type": "String"
+			},
+			"On Completion": {
+				"type": "String"
+			},
+			"For each On Success": {
+				"type": "String"
+			},
+			"For Each On Failure": {
+				"type": "String"
+			},
+			"For Each On Completion": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
