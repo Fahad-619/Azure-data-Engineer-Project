@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "GetMetadata_Orders",
+				"name": "GetMetadata_Geolocation",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "GetMetadata_Orders",
+						"referenceName": "GetMetadata_Geolocation",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -36,7 +36,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "GetMetadata_Orders",
+						"activity": "GetMetadata_Geolocation",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetMetadata_Orders').output.childItems",
+						"value": "@activity('GetMetadata_Geolocation').output.childItems",
 						"type": "Expression"
 					},
 					"activities": [
@@ -90,13 +90,13 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ADLSOrdersDataset",
+									"referenceName": "ADLSGeolocationDataset",
 									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "SQLOrdersDataset",
+									"referenceName": "SQLGeolocationDataset",
 									"type": "DatasetReference"
 								}
 							]

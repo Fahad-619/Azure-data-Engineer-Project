@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "GetMetadata_Orders",
+				"name": "GetMetadata_Sellers",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -36,7 +36,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "GetMetadata_Orders",
+						"activity": "GetMetadata_Sellers",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetMetadata_Orders').output.childItems",
+						"value": "@activity('GetMetadata_Sellers').output.childItems",
 						"type": "Expression"
 					},
 					"activities": [
@@ -90,13 +90,13 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ADLSOrdersDataset",
+									"referenceName": "ADLSSellersDataset",
 									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "SQLOrdersDataset",
+									"referenceName": "SQLSellersDataset",
 									"type": "DatasetReference"
 								}
 							]
