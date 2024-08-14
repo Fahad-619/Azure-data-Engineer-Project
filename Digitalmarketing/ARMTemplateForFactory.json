@@ -825,11 +825,11 @@
 					},
 					{
 						"name": "review_comment_title",
-						"type": "text"
+						"type": "varchar"
 					},
 					{
 						"name": "review_comment_message",
-						"type": "text"
+						"type": "varchar"
 					},
 					{
 						"name": "review_creation_date",
