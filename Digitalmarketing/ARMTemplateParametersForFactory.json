@@ -8,8 +8,20 @@
 		"adls_to_adf_accountKey": {
 			"value": ""
 		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
 		"adls_to_adf_properties_typeProperties_url": {
 			"value": "https://ecommercedataset.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "ecomdigital.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "digital"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "ecom"
 		}
 	}
 }
