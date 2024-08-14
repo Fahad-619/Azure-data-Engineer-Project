@@ -1,9 +1,9 @@
 {
-	"name": "ingest-orders-pipeline",
+	"name": "ingest-OrderItems-pipeline",
 	"properties": {
 		"activities": [
 			{
-				"name": "GetMetadata_Orders",
+				"name": "GetMetadata_OrderItems",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "GetMetadata_Orders",
+						"referenceName": "GetMetadata_OrderItems",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -36,7 +36,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "GetMetadata_Orders",
+						"activity": "GetMetadata_OrderItems",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetMetadata_Orders').output.childItems",
+						"value": "@activity('GetMetadata_OrderItems').output.childItems",
 						"type": "Expression"
 					},
 					"activities": [
@@ -90,13 +90,13 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ADLSOrdersDataset",
+									"referenceName": "ADLSOrderItemsDataset",
 									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "SQLOrdersDataset",
+									"referenceName": "SQLOrderItemsDataset",
 									"type": "DatasetReference"
 								}
 							]

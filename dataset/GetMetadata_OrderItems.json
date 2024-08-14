@@ -1,5 +1,5 @@
 {
-	"name": "GetMetadata_Orders",
+	"name": "GetMetadata_OrderItems",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "adls_to_adf",
@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "orders",
+				"folderPath": "order-items",
 				"fileSystem": "raw-data"
 			},
 			"columnDelimiter": ",",
@@ -27,31 +27,27 @@
 				"type": "String"
 			},
 			{
-				"name": "customer_id",
+				"name": "order_item_id",
 				"type": "String"
 			},
 			{
-				"name": "order_status",
+				"name": "product_id",
 				"type": "String"
 			},
 			{
-				"name": "order_purchase_timestamp",
+				"name": "seller_id",
 				"type": "String"
 			},
 			{
-				"name": "order_approved_at",
+				"name": "shipping_limit_date",
 				"type": "String"
 			},
 			{
-				"name": "order_delivered_carrier_date",
+				"name": "price",
 				"type": "String"
 			},
 			{
-				"name": "order_delivered_customer_date",
-				"type": "String"
-			},
-			{
-				"name": "order_estimated_delivery_date",
+				"name": "freight_value",
 				"type": "String"
 			}
 		]

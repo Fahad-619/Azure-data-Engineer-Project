@@ -1,5 +1,5 @@
 {
-	"name": "GetMetadata_Orders",
+	"name": "GetMetadata_Geolocation",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "adls_to_adf",
@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "orders",
+				"folderPath": "geolocation",
 				"fileSystem": "raw-data"
 			},
 			"columnDelimiter": ",",
@@ -23,35 +23,23 @@
 		},
 		"schema": [
 			{
-				"name": "order_id",
+				"name": "geolocation_zip_code_prefix",
 				"type": "String"
 			},
 			{
-				"name": "customer_id",
+				"name": "geolocation_lat",
 				"type": "String"
 			},
 			{
-				"name": "order_status",
+				"name": "geolocation_lng",
 				"type": "String"
 			},
 			{
-				"name": "order_purchase_timestamp",
+				"name": "geolocation_city",
 				"type": "String"
 			},
 			{
-				"name": "order_approved_at",
-				"type": "String"
-			},
-			{
-				"name": "order_delivered_carrier_date",
-				"type": "String"
-			},
-			{
-				"name": "order_delivered_customer_date",
-				"type": "String"
-			},
-			{
-				"name": "order_estimated_delivery_date",
+				"name": "geolocation_state",
 				"type": "String"
 			}
 		]

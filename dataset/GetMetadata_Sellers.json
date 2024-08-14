@@ -1,5 +1,5 @@
 {
-	"name": "GetMetadata_Orders",
+	"name": "GetMetadata_Sellers",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "adls_to_adf",
@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "orders",
+				"folderPath": "sellers",
 				"fileSystem": "raw-data"
 			},
 			"columnDelimiter": ",",
@@ -23,35 +23,19 @@
 		},
 		"schema": [
 			{
-				"name": "order_id",
+				"name": "seller_id",
 				"type": "String"
 			},
 			{
-				"name": "customer_id",
+				"name": "seller_zip_code_prefix",
 				"type": "String"
 			},
 			{
-				"name": "order_status",
+				"name": "seller_city",
 				"type": "String"
 			},
 			{
-				"name": "order_purchase_timestamp",
-				"type": "String"
-			},
-			{
-				"name": "order_approved_at",
-				"type": "String"
-			},
-			{
-				"name": "order_delivered_carrier_date",
-				"type": "String"
-			},
-			{
-				"name": "order_delivered_customer_date",
-				"type": "String"
-			},
-			{
-				"name": "order_estimated_delivery_date",
+				"name": "seller_state",
 				"type": "String"
 			}
 		]

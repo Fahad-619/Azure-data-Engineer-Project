@@ -1,5 +1,5 @@
 {
-	"name": "GetMetadata_Orders",
+	"name": "GetMetadata_Products",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "adls_to_adf",
@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "orders",
+				"folderPath": "products",
 				"fileSystem": "raw-data"
 			},
 			"columnDelimiter": ",",
@@ -23,35 +23,39 @@
 		},
 		"schema": [
 			{
-				"name": "order_id",
+				"name": "product_id",
 				"type": "String"
 			},
 			{
-				"name": "customer_id",
+				"name": "product_category_name",
 				"type": "String"
 			},
 			{
-				"name": "order_status",
+				"name": "product_name_lenght",
 				"type": "String"
 			},
 			{
-				"name": "order_purchase_timestamp",
+				"name": "product_description_lenght",
 				"type": "String"
 			},
 			{
-				"name": "order_approved_at",
+				"name": "product_photos_qty",
 				"type": "String"
 			},
 			{
-				"name": "order_delivered_carrier_date",
+				"name": "product_weight_g",
 				"type": "String"
 			},
 			{
-				"name": "order_delivered_customer_date",
+				"name": "product_length_cm",
 				"type": "String"
 			},
 			{
-				"name": "order_estimated_delivery_date",
+				"name": "product_height_cm",
+				"type": "String"
+			},
+			{
+				"name": "product_width_cm",
 				"type": "String"
 			}
 		]

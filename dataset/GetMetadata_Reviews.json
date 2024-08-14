@@ -1,5 +1,5 @@
 {
-	"name": "GetMetadata_Orders",
+	"name": "GetMetadata_Reviews",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "adls_to_adf",
@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "orders",
+				"folderPath": "reviews",
 				"fileSystem": "raw-data"
 			},
 			"columnDelimiter": ",",
@@ -23,35 +23,31 @@
 		},
 		"schema": [
 			{
+				"name": "review_id",
+				"type": "String"
+			},
+			{
 				"name": "order_id",
 				"type": "String"
 			},
 			{
-				"name": "customer_id",
+				"name": "review_score",
 				"type": "String"
 			},
 			{
-				"name": "order_status",
+				"name": "review_comment_title",
 				"type": "String"
 			},
 			{
-				"name": "order_purchase_timestamp",
+				"name": "review_comment_message",
 				"type": "String"
 			},
 			{
-				"name": "order_approved_at",
+				"name": "review_creation_date",
 				"type": "String"
 			},
 			{
-				"name": "order_delivered_carrier_date",
-				"type": "String"
-			},
-			{
-				"name": "order_delivered_customer_date",
-				"type": "String"
-			},
-			{
-				"name": "order_estimated_delivery_date",
+				"name": "review_answer_timestamp",
 				"type": "String"
 			}
 		]
