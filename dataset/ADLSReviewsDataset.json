@@ -1,0 +1,57 @@
+{
+	"name": "ADLSReviewsDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_to_adf",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source_Data_(ADLS)/Reviews"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Reviews.csv",
+				"folderPath": "reviews",
+				"fileSystem": "raw-data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "review_id",
+				"type": "String"
+			},
+			{
+				"name": "order_id",
+				"type": "String"
+			},
+			{
+				"name": "review_score",
+				"type": "String"
+			},
+			{
+				"name": "review_comment_title",
+				"type": "String"
+			},
+			{
+				"name": "review_comment_message",
+				"type": "String"
+			},
+			{
+				"name": "review_creation_date",
+				"type": "String"
+			},
+			{
+				"name": "review_answer_timestamp",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,9 @@
+{
+	"name": "Digitalmarketing",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b03c4288-a0e2-46f9-93aa-7635e8f9c746",
+		"tenantId": "372cf030-938d-4d5a-a4eb-2a362364ff60"
+	}
+}

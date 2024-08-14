@@ -1,0 +1,49 @@
+{
+	"name": "ADLSOrder_paymentsDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_to_adf",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Source_Data_(ADLS)/order-payments"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Order Payments.csv",
+				"folderPath": "order-payments",
+				"fileSystem": "raw-data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "String"
+			},
+			{
+				"name": "payment_sequential",
+				"type": "String"
+			},
+			{
+				"name": "payment_type",
+				"type": "String"
+			},
+			{
+				"name": "payment_installments",
+				"type": "String"
+			},
+			{
+				"name": "payment_value",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
